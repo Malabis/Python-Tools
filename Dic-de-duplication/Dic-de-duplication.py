@@ -8,8 +8,8 @@ newfile = sys.argv[3]#去重完之后的字典
 
 def merge(dic1,dic2):
     try:
-        with open(dic1,'a+',encoding = 'utf-8') as f1:
-            with open(dic2,'r',encoding = 'utf-8') as f2:
+        with open(dic1,'a+') as f1:
+            with open(dic2,'r') as f2:
                 f1.write('\n')
                 for line in f2:#迭代的方式读取文件中的每一行
                     f1.write(line)
@@ -19,8 +19,8 @@ def merge(dic1,dic2):
 def deplication(dic):
     disorder_set = set()#创建一个无序序列
     try:
-        with open(newfile,'w',encoding='utf-8') as outfile:
-            with open(dic,'r',encoding='utf-8') as f:
+        with open(newfile,'w') as outfile:
+            with open(dic,'r') as f:
                 for line in f:
                     if line not in disorder_set:
                         disorder_set.add(line)
